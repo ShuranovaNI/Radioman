@@ -1,10 +1,10 @@
 package ru.netology.qi;
 
 public class Radio {
-    public int currentRadioStation;
-    public int currentVolume;
+    int currentRadioStation;
+    int currentVolume;
 
-    public void setCurrentRadioStation(int newNumberStation) {
+    void setCurrentRadioStation(int newNumberStation) {
         if (newNumberStation < 0) {
             return;
         }
@@ -14,10 +14,11 @@ public class Radio {
         currentRadioStation = newNumberStation;
     }
 
-    public int getCurrentRadioStation(){
+    int getCurrentRadioStation() {
         return currentRadioStation;
     }
-    public void nextStation() {
+
+    void nextStation() {
         if (currentRadioStation >= 9) {
             setCurrentRadioStation(0);
         } else {
@@ -25,38 +26,39 @@ public class Radio {
         }
     }
 
-    public void prevStation() {
+    void prevStation() {
         if (currentRadioStation <= 0) {
             setCurrentRadioStation(9);
         } else {
-           setCurrentRadioStation(currentRadioStation - 1);
+            setCurrentRadioStation(currentRadioStation - 1);
         }
 
     }
 
 
-    public int getCurrentVolume() {
+    int getCurrentVolume() {
         return currentVolume;
     }
 
-    public void setCurrentVolume(int currentVolume) {
-        if (currentVolume < 0 ) {
+    void setCurrentVolume(int currentVolume) {
+        if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10){
+        if (currentVolume > 10) {
             return;
         }
-       this.currentVolume = currentVolume;
+        this.currentVolume = currentVolume;
     }
-    public void increaseVolume() {
+
+    void increaseVolume() {
         if (currentVolume < 10) {
             currentVolume++;
         }
     }
 
-        public void decreaseVolume () {
-            if (currentVolume > 0) {
-                currentVolume--;
-            }
+    void decreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume--;
         }
     }
+}
