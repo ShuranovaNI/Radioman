@@ -1,10 +1,10 @@
 package ru.netology.qi;
 
 public class Radio {
-    int currentRadioStation;
-    int currentVolume;
+    private int currentRadioStation;
+    private int currentVolume;
 
-    void setCurrentRadioStation(int newNumberStation) {
+    public void setCurrentRadioStation(int newNumberStation) {
         if (newNumberStation < 0) {
             return;
         }
@@ -14,11 +14,11 @@ public class Radio {
         currentRadioStation = newNumberStation;
     }
 
-    int getCurrentRadioStation() {
+    public int getCurrentRadioStation() {
         return currentRadioStation;
     }
 
-    void nextStation() {
+    public void nextStation() {
         if (currentRadioStation >= 9) {
             setCurrentRadioStation(0);
         } else {
@@ -26,7 +26,7 @@ public class Radio {
         }
     }
 
-    void prevStation() {
+    public void prevStation() {
         if (currentRadioStation <= 0) {
             setCurrentRadioStation(9);
         } else {
@@ -36,11 +36,11 @@ public class Radio {
     }
 
 
-    int getCurrentVolume() {
+    public int getCurrentVolume() {
         return currentVolume;
     }
 
-    void setCurrentVolume(int currentVolume) {
+    public void setCurrentVolume(int currentVolume) {
         if (currentVolume < 0) {
             return;
         }
@@ -50,13 +50,13 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    void increaseVolume() {
+    public void increaseVolume() {
         if (currentVolume < 10) {
             currentVolume++;
         }
     }
 
-    void decreaseVolume() {
+    public void decreaseVolume() {
         if (currentVolume > 0) {
             currentVolume--;
         }
